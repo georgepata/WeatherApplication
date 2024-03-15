@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherApplication.MainPage"
+             xmlns:model="clr-namespace:WeatherApplication.Model"
+             xmlns:viewmodel="clr-namespace:WeatherApplication.ViewModel" xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             x:DataType="viewmodel:YourCurrentLocationForecast"
+             Title="{Binding Title}">
+    <RefreshView Grid.ColumnSpan="2"
+        Command="{Binding callUpMethodsCommand}"
+        IsRefreshing="{Binding IsRefreshing}">
+    <ScrollView>
+    <Grid ColumnDefinitions="*,2*,*"
+          RowDefinitions="Auto,Auto,200,150,Auto,*">
+
+
+        <Label Text="{Binding UserLocation}"
+               HorizontalTextAlignment="Center"
+               Padding="50"
+               Grid.ColumnSpan="3"
+               FontSize="Large"
+               Grid.Row="0"/>
+        <skia:SKLottieView Source="{Binding CurrentWeatherAnimation}"
+                           HeightRequest="150"
+                           WidthRequest="200"
+                           Grid.Row="1"
+                           Grid.ColumnSpan="3"
+                           RepeatCount="-1"/>
+
+        <Grid Grid.Row="2"
+             Grid.Column="1"
+             ColumnDefinitions="*,*"
+             RowDefinitions="*,*,*">
+            <Label Text="{Binding CurrentWeather.WeatherText}"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="2"
+                   HorizontalTextAlignment="Center"/>
+            <Label Text="{Binding DailyTemperatureStats.Data.Temperature.Minimum.CelsiusValue, StringFormat='Min: {0}°C'}"
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   HorizontalTextAlignment="Center"/>
+            <Label Text="{Binding DailyTemperatureStats.Data.Temperature.Maximum.CelsiusValue, StringFormat='Max: {0}°C'}"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   HorizontalTextAlignment="Center"/>
+
+            <!-- aici voi pune pe Grid.Row=3 currentweather si weatherindicator animation de pe lottiefiles-->
+            <Label Text="{Binding CurrentWeather.Temperature.Metric.Value, StringFormat='{0}°C'}"
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            Margin="60,20,0,0"
+                            FontSize="20"/>
+            <skia:SKLottieView Source="{Binding WeatherIndicator}"
+                            HeightRequest="100"
+                            WidthRequest="100"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            RepeatCount="-1"
+                            Grid.ColumnSpan="2"
+                            Margin="0,0,70,0"/>
+        </Grid> 
+
+        <CollectionView ItemsSource="{Binding ListOfDailyTemperatures}"
+                        SelectionMode="None"
+                        Grid.Row="3"
+                        Grid.ColumnSpan="3">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="3"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:DailyTemperature">
+                        <Frame HeightRequest="150"
+                                WidthRequest="200"
+                                BackgroundColor="Black">
+                            <Grid RowDefinitions="Auto,Auto,50">
+                                <Label Text="{Binding WeatherTime}"
+                                        Grid.Row="0"
+                                        HeightRequest="30"
+                                        HorizontalTextAlignment="Center"/>
+                                <skia:SKLottieView Source="{Binding SKFileLottieImageSource}"
+                                                    WidthRequest="70"
+                                                    HeightRequest="60"
+                                                    RepeatCount="-1"
+                                                    Grid.Row="1"/>
+                                <Label Text="{Binding Temperature.CelsiusValue, StringFormat='{0}°'}"
+                                        Grid.Row="2"
+                                        HorizontalTextAlignment="Center"
+                                        Margin="0,10,0,0"/>
+                            </Grid>
+                        </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>            
+        </CollectionView>
+
+        <CollectionView ItemsSource="{Binding ListOfFiveDaysForecasts}"
+                        SelectionMode="None"
+                        Grid.Row="4"
+                        Grid.ColumnSpan="3"
+                        Margin="0,100,0,0">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="3"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:WeeklyForecast">
+                        <Frame HeightRequest="100">
+                            <Grid ColumnDefinitions="Auto,*,*,*,*,*">
+                                <Label Text="{Binding Date.DayOfWeek}"
+                                       Grid.Column="0"
+                                       HorizontalTextAlignment="Center"
+                                       Margin="0,10,0,0"/>
+                                <skia:SKLottieView Source="{Binding WeeklyWeatherAnimation}"
+                                                   HeightRequest="50"
+                                                   WidthRequest="50"
+                                                   RepeatCount="-1"
+                                                   Grid.Column="2"/>
+                                <Label Text="{Binding Temperature.Minimum.Value, StringFormat='{0}°C'}"
+                                        Grid.Column="3"
+                                        Margin="20,20,0,0"/>
+                                <Image Source="indicator_image"
+                                        Grid.Column="4"
+                                        HeightRequest="50"
+                                        WidthRequest="50"/>
+                                <Label Text="{Binding Temperature.Maximum.Value, StringFormat='{0}°C'}"
+                                        Grid.Column="5"
+                                        Margin="0,20,0,0"/>
+                            </Grid>
+                        </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <ActivityIndicator
+            Grid.RowSpan="6"
+            Grid.ColumnSpan="3"
+            HorizontalOptions="Fill"
+            IsRunning="{Binding IsBusy}"
+            IsVisible="{Binding IsBusy}"
+            VerticalOptions="Center" />
+    </Grid>
+    </ScrollView>
+    </RefreshView>
+</ContentPage>
+

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <BundleResource Include="Resources/Raw/night_cloudy.json" />
+    <BundleResource Include="Resources/Raw/partly_sunny.json" />
+    <BundleResource Include="Resources/Raw/night_clear.json" />
+    <BundleResource Include="Resources/Raw/day_clear.json" />
+    <BundleResource Include="/Users/patageorge/Desktop/Home/C#/MAUI/WeatherApplication/WeatherApplication/WeatherApplication/obj/Debug/net7.0-maccatalyst/resizetizer/r/dotnet_bot.png" />
+    <BundleResource Include="/Users/patageorge/Desktop/Home/C#/MAUI/WeatherApplication/WeatherApplication/WeatherApplication/obj/Debug/net7.0-maccatalyst/resizetizer/r/dotnet_bot@2x.png" />
+    <BundleResource Include="/Users/patageorge/Desktop/Home/C#/MAUI/WeatherApplication/WeatherApplication/WeatherApplication/obj/Debug/net7.0-maccatalyst/resizetizer/r/dotnet_bot@3x.png" />
+    <BundleResource Include="/Users/patageorge/Desktop/Home/C#/MAUI/WeatherApplication/WeatherApplication/WeatherApplication/obj/Debug/net7.0-maccatalyst/resizetizer/r/Resources/indicator_image.png" />
+    <BundleResource Include="obj/Debug/net7.0-maccatalyst/resizetizer/f/OpenSans-Regular.ttf" />
+    <BundleResource Include="obj/Debug/net7.0-maccatalyst/resizetizer/f/OpenSans-Semibold.ttf" />
+  </ItemGroup>
+</Project>

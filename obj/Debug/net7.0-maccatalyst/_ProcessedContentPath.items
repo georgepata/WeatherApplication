@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Content Include="Resources/Raw/AboutAssets.txt" />
+    <Content Include="Resources/Raw/day_clear.json" />
+    <Content Include="Resources/Raw/day_cloudy.json" />
+    <Content Include="Resources/Raw/night_clear.json" />
+    <Content Include="Resources/Raw/night_cloudy.json" />
+    <Content Include="Resources/Raw/night_raining.json" />
+    <Content Include="Resources/Raw/partly_sunny.json" />
+    <Content Include="Resources/Raw/weather_indicator.json" />
+  </ItemGroup>
+</Project>

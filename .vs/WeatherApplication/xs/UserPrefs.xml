@@ -1,0 +1,39 @@
+﻿<Properties StartupConfiguration="{0936CCA8-A621-40EA-BEAE-199E87A1C87A}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ViewModel/BaseViewModel.cs">
+    <Files>
+      <File FileName="ViewModel/BaseViewModel.cs" Line="130" Column="30" />
+      <File FileName="ViewModel/YourCurrentLocationForecast.cs" Line="49" Column="42" />
+      <File FileName="View/ChoosenCity.xaml" Line="10" Column="42" />
+      <File FileName="View/ChoosenCity.xaml.cs" Line="10" Column="48" />
+      <File FileName="ViewModel/SearchViewModel.cs" Line="28" Column="4" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="WeatherApplication" expanded="True">
+            <Node name="WeatherApplication" expanded="True">
+              <Node name="Service" expanded="True" />
+              <Node name="View" expanded="True">
+                <Node name="ChoosenCity.xaml" expanded="True" />
+              </Node>
+              <Node name="ViewModel" expanded="True">
+                <Node name="BaseViewModel.cs" selected="True" />
+              </Node>
+              <Node name="App.xaml" expanded="True" />
+              <Node name="AppShell.xaml" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.MonoDroid LastDeploySdkVersion="34.0.79" />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B1E1B8C7-BF56-4DF5-84A8-6DE5CAA61893" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.WeatherApplication PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B1E1B8C7-BF56-4DF5-84A8-6DE5CAA61893" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
